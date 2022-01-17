@@ -4,14 +4,13 @@
 
 2 Make DB
 
->>>>> Message Table <<<<<<
+3 get chats (people)
 
-    > from
-    > to
-    > message
-    > date
-    > is_seen
 
+
+>>>>>> Problems <<<<<<<
+
+>> Want make place to store last message
 
 
 
