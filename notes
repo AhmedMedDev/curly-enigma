@@ -2,5 +2,19 @@
 
 1 Setup layouts
 
+2 Make DB
+
+messages table
+message , date , chat_id  
+
+>>>>> Message Table <<<<<<
+
+    > from
+    > to
+    > message
+    > date
+
+
+
 
 
