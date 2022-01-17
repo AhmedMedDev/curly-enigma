@@ -1,5 +1,5 @@
 @php
-$users = DB::table('users')->get();
+    $users = DB::table('users')->get();
 @endphp
 
 @foreach ($users as $user)
