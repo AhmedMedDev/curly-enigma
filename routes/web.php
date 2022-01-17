@@ -28,3 +28,5 @@ Route::get('/puke/{user_id}', function ($user_id) {
     event(new PukeEvent('Hello',$user_id));
     return 'Done';
 });
+
+Route::get('/{page}', 'ViewkernelController');
