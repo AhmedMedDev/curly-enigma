@@ -1,31 +1,29 @@
-<div class="chat" data-chat="person1">
-    <div class="conversation-start">
-        <span>Today, 6:48 AM</span>
-    </div>
-    <div class="bubble you">
-        Hello,
-    </div>
-    <div class="bubble you">
-        It's me.
-    </div>
-    <div class="bubble you">
-        I have a question regarding project.
-    </div>
-</div>
-<div class="chat" data-chat="person2">
-    <div class="conversation-start">
-        <span>Today, 5:38 PM</span>
-    </div>
-    <div class="bubble you">
-        Hello!
-    </div>
-    <div class="bubble me">
-        Hey!
-    </div>
-    <div class="bubble me">
-        How was your day so far.
-    </div>
-    <div class="bubble you">
-        It was a bit dramatic.
-    </div>
-</div>
+@php
+$users = DB::table('users')->get();
+$messages = DB::table('messages')->get();
+@endphp
+
+
+@foreach ($users as $user)
+
+    @if ($user->id != Auth::user()->id)
+        <div class="chat" data-chat="person{{ $user->id }}">
+            <div class="conversation-start">
+                <span>Today, 5:38 PM</span>
+            </div>
+            @foreach ($messages as $message)
+                @if ($message->from == Auth::user()->id && $message->to == $user->id)
+                    <div class="bubble me">
+                        {{ $message->body }}
+                    </div>
+                @endif
+                @if ($message->from == $user->id && $message->to == Auth::user()->id)
+                    <div class="bubble you">
+                        {{ $message->body }}
+                    </div>
+                @endif
+            @endforeach
+        </div>
+    @endif
+
+@endforeach
