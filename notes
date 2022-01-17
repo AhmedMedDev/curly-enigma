@@ -4,15 +4,13 @@
 
 2 Make DB
 
-messages table
-message , date , chat_id  
-
 >>>>> Message Table <<<<<<
 
     > from
     > to
     > message
     > date
+    > is_seen
 
 
 
