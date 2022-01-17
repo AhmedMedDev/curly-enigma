@@ -4,16 +4,13 @@
 
 2 Make DB
 
-messages table
-message , date , chat_id  
+3 get chats (people)
 
->>>>> Message Table <<<<<<
 
-    > from
-    > to
-    > message
-    > date
 
+>>>>>> Problems <<<<<<<
+
+>> Want make place to store last message
 
 
 
