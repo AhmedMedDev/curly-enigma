@@ -4,7 +4,7 @@ use App\Events\PukeEvent;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/puke/{user_id}', function ($user_id) {
     event(new PukeEvent('Hello',$user_id));
     return 'Done';
+});
+
+Route::post('message/create', function (Request $request) {
+    
 });
 
 Route::get('/{page}', 'ViewkernelController');
