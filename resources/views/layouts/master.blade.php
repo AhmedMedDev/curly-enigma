@@ -8,7 +8,12 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('dash-assets/assets/img/favicon.ico')}}"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta name="userID" content="{{ Auth::user()->id ?? '' }}">
     @include('inc.layouts.master-style')
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @livewireStyles
 </head>
 

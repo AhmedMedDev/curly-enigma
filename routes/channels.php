@@ -18,6 +18,6 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('notifications.{user_id}', function ($user, $user_id) {
+Broadcast::channel('conversation.{user_id}', function ($user, $user_id) {
     return (int) $user->id === (int) $user_id;
 });

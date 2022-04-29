@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Chat;
 
+use App\Events\NewMessageEvent;
+use App\Events\PukeEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
@@ -17,8 +19,8 @@ class MessageSendign extends Component
         ]);
 
         // Broadcasting 
-        // event(new NewMessageEvent($body,$receiver));
-    }
+        event(new NewMessageEvent($body, $receiver, auth()->user()->id));
+}
     public function render()
     {
         return view('livewire.chat.message-sendign');

@@ -5,7 +5,7 @@
 @foreach ($users as $user)
 
     @if ($user->id != Auth::user()->id)
-        <div class="person" data-chat="person{{ $user->id }}">
+        <div class="person sender_{{$user->id}}" data-chat="person{{ $user->id }}">
             <div class="user-info">
                 <div class="f-head">
                     <img src="{{ asset('dash-assets/assets/img/90x90.jpg') }}" alt="avatar">
