@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('inc.layouts.master-style')
-
+    @livewireStyles
 </head>
 
 <body class="alt-menu sidebar-noneoverflow">
@@ -51,5 +51,7 @@
 
 
     @include('inc.layouts.master-script')
+    @stack('js')
+    @livewireScripts
 </body>
 </html>
