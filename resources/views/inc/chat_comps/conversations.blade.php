@@ -5,7 +5,6 @@ $messages = DB::table('messages')->get();
 
 
 @foreach ($users as $user)
-
     @if ($user->id != Auth::user()->id)
         <div class="chat" data-chat="person{{ $user->id }}" data-user="{{ $user->id }}">
             <div class="conversation-start">
@@ -25,5 +24,4 @@ $messages = DB::table('messages')->get();
             @endforeach
         </div>
     @endif
-
 @endforeach
