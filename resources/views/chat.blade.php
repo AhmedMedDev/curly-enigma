@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="chat-footer">
-                            @include('inc.chat_comps.message-form')
+                            <livewire:chat.message-sendign />
                         </div>
                     </div>
                 </div>

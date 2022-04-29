@@ -138,39 +138,8 @@ $('.switch-to-phone-call').off('click').on('click', function(event) {
     setTimeout(callOnConnect, 2000);
 })
 
-$('.mail-write-box').on('keydown', function(event) {
-    if(event.key === 'Enter') {
-        var chatInput = $(this);
-        var chatMessageValue = chatInput.val();
-        if (chatMessageValue === '') { return; }
-        $messageHtml = '<div class="bubble me">' + chatMessageValue + '</div>';
-        var appendMessage = $(this).parents('.chat-system').find('.active-chat').append($messageHtml);
-        const getScrollContainer = document.querySelector('.chat-conversation-box');
-        getScrollContainer.scrollTop = getScrollContainer.scrollHeight;
-        var clearChatInput = chatInput.val('');
-        var to = $(this).parents('.chat-system').find('.active-chat').attr('data-user');
 
-        sendMessage (chatMessageValue, to)
-    }
-})
 
 $('.hamburger, .chat-system .chat-box .chat-not-selected p').on('click', function(event) {
   $(this).parents('.chat-system').find('.user-list-box').toggleClass('user-list-box-show')
 })
-
-$.ajaxSetup({
-  headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-});
-
-function sendMessage (body, to) {
-  $.ajax({
-      method : "POST",
-      url  : "message/create",
-      data  : {body, to},
-      cache:false,
-      success: function (data) {},
-      error: function (data) {}
-  })
-}
