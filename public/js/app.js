@@ -43487,8 +43487,8 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   disableStats: true
 });
 var AuthID = $('meta[name=userID]').attr('content');
-window.Echo["private"]("notifications.".concat(AuthID)).listen('PukeEvent', function (e) {
-  alert('You have notification');
+window.Echo["private"]("conversation.".concat(AuthID)).listen('NewMessageEvent', function (e) {
+  alert(e.message);
 });
 
 /***/ }),

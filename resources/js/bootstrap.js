@@ -46,7 +46,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  
  let AuthID = $('meta[name=userID]').attr('content');
  
- window.Echo.private(`notifications.${AuthID}`)
-     .listen('PukeEvent', e => {
-         alert('You have notification')
+ window.Echo.private(`conversation.${AuthID}`)
+     .listen('NewMessageEvent', e => {
+         alert(e.message)
      });

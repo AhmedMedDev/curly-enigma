@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Chat;
 
+use App\Events\NewMessageEvent;
 use App\Events\PukeEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,8 +19,7 @@ class MessageSendign extends Component
         ]);
 
         // Broadcasting 
-        // event(new NewMessageEvent($body,$receiver));
-        event(new PukeEvent('Hello', 1));
+        event(new NewMessageEvent($body, $receiver));
 }
     public function render()
     {
