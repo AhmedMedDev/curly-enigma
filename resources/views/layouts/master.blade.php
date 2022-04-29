@@ -20,7 +20,7 @@
     <!--  END LOADER -->
     
     <!--  BEGIN NAVBAR  -->
-    @include('inc.layouts.main-nav')
+    {{-- @include('inc.layouts.main-nav') --}}
     <!--  END NAVBAR  -->
 
     <!--  BEGIN MAIN CONTAINER  -->
@@ -30,7 +30,7 @@
         <div class="search-overlay"></div>
 
         <!--  BEGIN TOPBAR  -->
-        @include('inc.layouts.topbar')
+        {{-- @include('inc.layouts.topbar') --}}
         <!--  END TOPBAR  -->
 
         <!--  BEGIN CONTENT AREA  -->
