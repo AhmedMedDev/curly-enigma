@@ -48,5 +48,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  
  window.Echo.private(`conversation.${AuthID}`)
      .listen('NewMessageEvent', e => {
-         alert(e.message)
+        //  $(`.sender_${e.sender}`).css("background-color", "#d1d6ff");
+         $(`.chat_${e.sender}`).append(`
+                    <div class="bubble you">
+                        ${e.message}
+                    </div>
+         `)
      });

@@ -19,7 +19,7 @@ class MessageSendign extends Component
         ]);
 
         // Broadcasting 
-        event(new NewMessageEvent($body, $receiver));
+        event(new NewMessageEvent($body, $receiver, auth()->user()->id));
 }
     public function render()
     {

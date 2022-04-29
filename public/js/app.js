@@ -43488,7 +43488,8 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
 });
 var AuthID = $('meta[name=userID]').attr('content');
 window.Echo["private"]("conversation.".concat(AuthID)).listen('NewMessageEvent', function (e) {
-  alert(e.message);
+  //  $(`.sender_${e.sender}`).css("background-color", "#d1d6ff");
+  $(".chat_".concat(e.sender)).append("\n                    <div class=\"bubble you\">\n                        ".concat(e.message, "\n                    </div>\n         "));
 });
 
 /***/ }),

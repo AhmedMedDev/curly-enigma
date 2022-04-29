@@ -16,12 +16,13 @@ class NewMessageEvent implements ShouldBroadcast
 
     public $message;
     public $receiver;
+    public $sender;
 
-    public function __construct($message, $receiver)
+    public function __construct($message, $receiver, $sender)
     {
         $this->message = $message;
-
         $this->receiver = $receiver;
+        $this->sender = $sender;
     }
 
     /**
@@ -36,6 +37,9 @@ class NewMessageEvent implements ShouldBroadcast
 
     public function broadcastWith()
     {
-        return ['message' => $this->message];
+        return [
+            'message' => $this->message,
+            'sender' => $this->sender,
+        ];
     }
 }
