@@ -12,12 +12,12 @@ $messages = DB::table('messages')->get();
                 <span>Today, 5:38 PM</span>
             </div>
             @foreach ($messages as $message)
-                @if ($message->from == Auth::user()->id && $message->to == $user->id)
+                @if ($message->sender == Auth::user()->id && $message->receiver == $user->id)
                     <div class="bubble me">
                         {{ $message->body }}
                     </div>
                 @endif
-                @if ($message->from == $user->id && $message->to == Auth::user()->id)
+                @if ($message->sender == $user->id && $message->receiver == Auth::user()->id)
                     <div class="bubble you">
                         {{ $message->body }}
                     </div>
