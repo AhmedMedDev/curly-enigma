@@ -34,7 +34,7 @@ return [
             'driver' => 'pusher',
             'key' => 'pusher_med_key',
             'secret' => 'pusher_med_secret',
-            'app_id' => 'pusher_med_app_id',
+            'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => 'mtl',
                 'encrypted' => true,
