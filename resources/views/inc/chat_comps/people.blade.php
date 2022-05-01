@@ -13,7 +13,8 @@
                 <div class="f-body">
                     <div class="meta-info">
                         <span class="user-name" data-name="{{ $user->name }}"">{{ $user->name }}</span>
-                <span class="  user-meta-time">2:09 PM</span>
+                        <span class="  user-meta-time"><img class="online" src="https://www.pngkey.com/png/detail/417-4174990_how-to-set-use-small-green-dot-icon.png" alt="" width="20" id="online_flag{{$user->id}}"> 2:09 PM </span>
+                       
                     </div>
                     <span class="preview">I was wondering...</span>
                 </div>

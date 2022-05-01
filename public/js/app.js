@@ -43469,6 +43469,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+$('.online').hide();
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -43491,11 +43492,14 @@ window.Echo["private"]("conversation.".concat(AuthID)).listen('NewMessageEvent',
   //  $(`.sender_${e.sender}`).css("background-color", "#d1d6ff");
   $(".chat_".concat(e.sender)).append("\n                    <div class=\"bubble you\">\n                        ".concat(e.message, "\n                    </div>\n         "));
 });
-window.Echo.join('online').here(function (users) {//
+window.Echo.join('online').here(function (users) {
+  users.forEach(function (user) {
+    $("#online_flag".concat(user.id)).show();
+  });
 }).joining(function (user) {
-  console.log(user.name);
+  $("#online_flag".concat(user.id)).show();
 }).leaving(function (user) {
-  console.log(user.name);
+  $("#online_flag".concat(user.id)).hide();
 });
 
 /***/ }),
