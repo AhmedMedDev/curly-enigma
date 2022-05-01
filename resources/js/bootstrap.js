@@ -23,6 +23,8 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+$('.online').hide();
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -36,8 +38,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  
  window.Echo = new Echo({
      broadcaster: 'pusher',
-     key: process.env.MIX_PUSHER_APP_KEY,
-     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+     key: "pusher_med_key",
+     cluster: "mtl",
      wsHost: window.location.hostname,
      wsPort: 6001,
      forceTLS: false,
@@ -54,4 +56,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                         ${e.message}
                     </div>
          `)
-     });
+     })
+
+
+window.Echo.join('online')
+    .here((users) => {
+        users.forEach(user => {
+            $(`#online_flag${user.id}`).show()
+        });
+    })
+    .joining((user) => {
+        $(`#online_flag${user.id}`).show()
+    })
+    .leaving((user) => {
+        $(`#online_flag${user.id}`).hide()
+    });

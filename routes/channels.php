@@ -21,3 +21,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 Broadcast::channel('conversation.{user_id}', function ($user, $user_id) {
     return (int) $user->id === (int) $user_id;
 });
+
+Broadcast::channel('online', function ($user) {
+    return $user;
+});
