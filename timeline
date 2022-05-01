@@ -1,7 +1,5 @@
 
 
-- - clenaup 
-
 - Build Laravel Websockets Structure
 - Create Chat with basic services
 - Handle Chat tips
@@ -12,5 +10,5 @@
       * reorder sernder_box put it at top
         you should handle this tip in DB
 
-      * online, offline feat
-      * typing feat
+      * online, offline feat //
+      * typing feat //
