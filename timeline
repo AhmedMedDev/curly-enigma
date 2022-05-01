@@ -11,4 +11,10 @@
         you should handle this tip in DB
 
       * online, offline feat //
-      * typing feat //
+      * typing feat 
+        - oncahnge input 
+        - broadcast to receiver with typing alert and sender id
+        - make receiver listen to this channle
+        - make channle, make event 
+        - get sender box and add " typing. . .  " 
+        - after receive message from another channle make typing = off
