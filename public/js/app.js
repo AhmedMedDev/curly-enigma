@@ -43491,6 +43491,12 @@ window.Echo["private"]("conversation.".concat(AuthID)).listen('NewMessageEvent',
   //  $(`.sender_${e.sender}`).css("background-color", "#d1d6ff");
   $(".chat_".concat(e.sender)).append("\n                    <div class=\"bubble you\">\n                        ".concat(e.message, "\n                    </div>\n         "));
 });
+window.Echo.join('online').here(function (users) {//
+}).joining(function (user) {
+  console.log(user.name);
+}).leaving(function (user) {
+  console.log(user.name);
+});
 
 /***/ }),
 

@@ -55,3 +55,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                     </div>
          `)
      })
+
+
+window.Echo.join('online')
+    .here((users) => {
+        //
+    })
+    .joining((user) => {
+        console.log(user.name);
+    })
+    .leaving((user) => {
+        console.log(user.name);
+    });
